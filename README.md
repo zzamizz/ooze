@@ -1,11 +1,18 @@
 # ooze
-Savefile editor for the **PS2** release of **Monsters, Inc. Scare Island**
+Savefile editor & viewer for the **PS2** release of **Monsters, Inc. Scare Island**
 ![v1.00](/resources/ooze.png)
 
+## Features
+- Edit lives
+- Edit all ooze counts
+- Set flags for *specific* nerves or tokens in a map
+- Settings (volumes, rumble, stereo) and a flag for the ingame Cheats menu
+- 100% preset button: sets everything to 100 and checks all boxes
+
 ## Usage
-Current version only supports PCSX2's folder-type memory cards.
+Current version (1.00) only supports PCSX2's folder-type memory cards.
 1. Run ooze
-2. Find your PCSX2's `\memcards` directory
+2. Find your PCSX2's `\memcards` directory, and then your memory card folder.
 3. Choose Scare Island's savefile folder. The name is one of the following:
 - BESCES-50595
 - BESCES-50596
@@ -29,4 +36,8 @@ Current version only supports PCSX2's folder-type memory cards.
 ## To-do
 - Add support for all common memory card types
 - Document some unknown bitfields and perhaps add them into the program
+- Can you unlock movies?
+- Find how trampolines, speed arrows and slingshots are unlocked then add them.
+- There are separately uint32 versions of the nerve & token counts, editing only the bitfields does not affect them at the moment. This could cause funky glitches at times where the game uses current nerve count to unlock something (a couple cases)
+- Fix fucked up checkboxes (squished box = checkmark too big to display properly)
 - Add scale toggles for WPF (window scale is definitely goofy)
