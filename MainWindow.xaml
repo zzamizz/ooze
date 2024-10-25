@@ -1,0 +1,420 @@
+﻿<Window x:Class="ooze.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ooze v1.00" Height="406" Width="1179" ResizeMode="NoResize" Icon="/ooze_icon.ico">
+    <Window.Background>
+        <ImageBrush TileMode="FlipX" ImageSource="/background.jpg" Stretch="UniformToFill"/>
+    </Window.Background>
+
+    <Canvas Margin="0,0,363,77">
+        <Canvas.Background>
+            <ImageBrush/>
+        </Canvas.Background>
+        <Canvas.RenderTransform>
+            <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+        </Canvas.RenderTransform>
+
+        <TextBlock Text="Orientation" Canvas.Left="10" Canvas.Top="29" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF888FBF" FontFamily="Bahnschrift"/>
+        <TextBlock Text="City Park" Canvas.Left="10" Canvas.Top="45" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF888FBF" FontFamily="Bahnschrift"/>
+        <TextBlock Text="City Centre" Canvas.Left="10" Canvas.Top="61" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF888FBF" FontFamily="Bahnschrift"/>
+        <TextBlock Text="Docks" Canvas.Left="10" Canvas.Top="77" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF888FBF" FontFamily="Bahnschrift"/>
+        <TextBlock Text="Marketplace" Canvas.Left="10" Canvas.Top="93" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF888FBF" FontFamily="Bahnschrift"/>
+        <TextBlock Text="Oasis" Canvas.Left="10" Canvas.Top="125" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF888FBF" FontFamily="Bahnschrift"/>
+        <TextBlock Text="Sphinx" Canvas.Left="10" Canvas.Top="109" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF888FBF" FontFamily="Bahnschrift"/>
+        <TextBlock Text="Tomb" Canvas.Left="10" Canvas.Top="141" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF888FBF" FontFamily="Bahnschrift"/>
+        <TextBlock Text="Pyramid" Canvas.Left="10" Canvas.Top="157" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF888FBF" FontFamily="Bahnschrift"/>
+        <TextBlock Text="Sugar Shack" Canvas.Left="10" Canvas.Top="173" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF888FBF" FontFamily="Bahnschrift"/>
+        <TextBlock Text="Ski Lift" Canvas.Left="10" Canvas.Top="189" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF888FBF" FontFamily="Bahnschrift"/>
+        <TextBlock Text="Iceberg" Canvas.Left="10" Canvas.Top="205" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF888FBF" FontFamily="Bahnschrift"/>
+        <TextBlock Text="Hot Springs" Canvas.Left="10" Canvas.Top="221" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF888FBF" FontFamily="Bahnschrift"/>
+
+        <Button x:Name="saveButton" Content="Save" Canvas.Left="53" Canvas.Top="11" RenderTransformOrigin="4.842,0.954" HorizontalAlignment="Left" VerticalAlignment="Center" Click="SaveButton_Click" Width="37" Foreground="#FF888FBF" FontFamily="Bahnschrift" FontSize="10"/>
+        <Button x:Name="browseButton" Content="Load..." Canvas.Left="10" Canvas.Top="11" HorizontalAlignment="Left" VerticalAlignment="Center" Click="BrowseButton_Click" Foreground="#FF888FBF" FontFamily="Bahnschrift" FontSize="10" Width="38"/>
+        <TextBox x:Name="Lives" Canvas.Left="742" TextWrapping="Wrap" Canvas.Top="28" Width="25" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" TextChanged="Lives_TextChanged"/>
+        <TextBlock x:Name="textLives" Text="Lives" Canvas.Left="713" Canvas.Top="30" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="10" Foreground="#FF888FBF" FontFamily="Bahnschrift"/>
+        <TextBox x:Name="Health" Canvas.Left="742" TextWrapping="Wrap" Canvas.Top="48" Width="25" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" TextChanged="Health_TextChanged"/>
+        <TextBlock x:Name="textHealth" Text="Health" Canvas.Left="708" Canvas.Top="50" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="10" Foreground="#FF888FBF" FontFamily="Bahnschrift"/>
+        <TextBox x:Name="OrientationOoze" Canvas.Left="115" TextWrapping="Wrap" Canvas.Top="29" Width="36" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.49,0.466" Height="15" FontSize="10" PreviewTextInput="PreviewTextInput" TextChanged="OrientationOoze_TextChanged"/>
+        <TextBlock Text="Ooze" FontWeight="Bold" Canvas.Left="115" Canvas.Top="12" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="11" Foreground="#FF888FBF" FontFamily="Bahnschrift"/>
+        <TextBox x:Name="CityParkOoze" Canvas.Left="115" TextWrapping="Wrap" Canvas.Top="45" Width="36" RenderTransformOrigin="0.49,0.466" Height="15" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="10"/>
+        <TextBox x:Name="CityCentreOoze" Canvas.Left="115" TextWrapping="Wrap" Canvas.Top="61" Width="36" RenderTransformOrigin="0.49,0.466" Height="15" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="10"/>
+        <TextBox x:Name="DocksOoze" Canvas.Left="115" TextWrapping="Wrap" Canvas.Top="77" Width="36" RenderTransformOrigin="0.49,0.466" Height="15" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="10"/>
+        <TextBox x:Name="MarketplaceOoze" Canvas.Left="115" TextWrapping="Wrap" Canvas.Top="93" Width="36" RenderTransformOrigin="0.49,0.466" Height="15" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="10"/>
+        <TextBox x:Name="OasisOoze" Canvas.Left="115" TextWrapping="Wrap" Canvas.Top="125" Width="36" RenderTransformOrigin="0.49,0.466" Height="15" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="10"/>
+        <TextBox x:Name="SphinxOoze" Canvas.Left="115" TextWrapping="Wrap" Canvas.Top="109" Width="36" RenderTransformOrigin="0.49,0.466" Height="15" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="10"/>
+        <TextBox x:Name="TombOoze" Canvas.Left="115" TextWrapping="Wrap" Canvas.Top="141" Width="36" RenderTransformOrigin="0.49,0.466" Height="15" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="10"/>
+        <TextBox x:Name="PyramidOoze" Canvas.Left="115" TextWrapping="Wrap" Canvas.Top="157" Width="36" RenderTransformOrigin="0.49,0.466" Height="15" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="10"/>
+        <TextBox x:Name="SugarshackOoze" Canvas.Left="115" TextWrapping="Wrap" Canvas.Top="173" Width="36" RenderTransformOrigin="0.49,0.466" Height="15" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="10"/>
+        <TextBox x:Name="SkiliftOoze" Canvas.Left="115" TextWrapping="Wrap" Canvas.Top="189" Width="36" RenderTransformOrigin="0.49,0.466" Height="15" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="10"/>
+        <TextBox x:Name="IcebergOoze" Canvas.Left="115" TextWrapping="Wrap" Canvas.Top="205" Width="36" RenderTransformOrigin="0.49,0.466" Height="15" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="10"/>
+        <TextBox x:Name="HotspringsOoze" Canvas.Left="115" TextWrapping="Wrap" Canvas.Top="221" Width="36" RenderTransformOrigin="0.49,0.466" Height="15" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBlock Text="Tokens" FontWeight="Bold" Canvas.Left="333" Canvas.Top="12" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="11" Foreground="#FF888FBF" FontFamily="Bahnschrift"/>
+        <CheckBox x:Name="OrientationToken1" Canvas.Left="333" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF81C5FF" Click="OrientationToken1_Click"/>
+        <CheckBox x:Name="OrientationToken2" Canvas.Left="349" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF81C5FF" Click="OrientationToken2_Click"/>
+        <CheckBox x:Name="OrientationToken3" Canvas.Left="365" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF81C5FF" Click="OrientationToken3_Click"/>
+        <CheckBox x:Name="OrientationToken4" Canvas.Left="381" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF81C5FF" Click="OrientationToken4_Click"/>
+        <CheckBox x:Name="OrientationToken5" Canvas.Left="397" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF81C5FF" Click="OrientationToken5_Click"/>
+        <CheckBox x:Name="OrientationToken6" Canvas.Left="413" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF81C5FF" Click="OrientationToken6_Click"/>
+        <CheckBox x:Name="OrientationToken7" Canvas.Left="429" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF81C5FF" Click="OrientationToken7_Click"/>
+        <CheckBox x:Name="OrientationToken8" Canvas.Left="445" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF81C5FF" Click="OrientationToken8_Click"/>
+        <CheckBox x:Name="OrientationToken9" Canvas.Left="461" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF81C5FF" Click="OrientationToken9_Click"/>
+        <CheckBox x:Name="OrientationToken10" Canvas.Left="477" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF81C5FF" Click="OrientationToken10_Click"/>
+        <CheckBox x:Name="OrientationNerve1" Canvas.Left="205" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFFBCA44" Click="OrientationNerve1_Click" ToolTip="First blue nerve"/>
+        <CheckBox x:Name="OrientationNerve2" Canvas.Left="221" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFFBCA44" Click="OrientationNerve2_Click" ToolTip="First green nerve"/>
+        <CheckBox x:Name="OrientationNerve3" Canvas.Left="237" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFFBCA44" Click="OrientationNerve3_Click" ToolTip="First yellow nerve"/>
+        <CheckBox x:Name="OrientationNerve4" Canvas.Left="253" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFFBCA44" Click="OrientationNerve4_Click" ToolTip="Orange nerve on the right"/>
+        <CheckBox x:Name="OrientationNerve5" Canvas.Left="269" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFFBCA44" Click="OrientationNerve5_Click" ToolTip="Orange nerve on the left"/>
+        <CheckBox x:Name="OrientationNerve6" Canvas.Left="285" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFFBCA44" Click="OrientationNerve6_Click" ToolTip="Red nerve at the top"/>
+        <CheckBox x:Name="OrientationNerve7" Canvas.Left="301" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFFBCA44" Click="OrientationNerve7_Click" ToolTip="Red nerve on the middle platform"/>
+        <CheckBox x:Name="OrientationNerve8" Canvas.Left="317" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFFBCA44" Click="OrientationNerve8_Click" ToolTip="Red nerve at the bottom"/>
+        <CheckBox x:Name="OrientationBronze" Canvas.Left="157" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFFF5C5C" Click="OrientationBronze_Click" ToolTip="Bronze"/>
+        <CheckBox x:Name="OrientationSilver" Canvas.Left="173" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFFF5C5C" Click="OrientationSilver_Click" ToolTip="Silver"/>
+        <CheckBox x:Name="OrientationGold" Canvas.Left="189" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFFF5C5C" Click="OrientationGold_Click" ToolTip="Gold"/>
+        <CheckBox x:Name="OrientationFlag1" Canvas.Left="493" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFE8E8E8" Click="OrientationFlag1_Click" ToolTip="Life token collected"/>
+        <TextBlock Text="Nerves" FontWeight="Bold" Canvas.Left="206" Canvas.Top="12" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="11" Foreground="#FF888FBF" FontFamily="Bahnschrift"/>
+        <TextBlock Text="Flags" FontWeight="Bold" Canvas.Left="494" Canvas.Top="12" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.532,1.026" FontSize="11" Foreground="#FF888FBF" FontFamily="Bahnschrift"/>
+        <TextBlock Text="Medals" FontWeight="Bold" Canvas.Left="158" Canvas.Top="12" RenderTransformOrigin="0.532,1.026" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="11" Foreground="#FF888FBF" FontFamily="Bahnschrift"/>
+        <TextBlock x:Name="textSettings" Text="Settings" Canvas.Left="726" Canvas.Top="71" FontWeight="Bold" FontSize="11" Foreground="#FF888FBF" FontFamily="Bahnschrift" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <CheckBox x:Name="Cheats" FlowDirection="RightToLeft" Canvas.Left="709" Canvas.Top="86" Foreground="#FF888FBF" FontFamily="Bahnschrift" HorizontalAlignment="Center" VerticalAlignment="Top" TextBlock.FontSize="10" Height="11" Width="58" Click="Cheats_Click">
+            <TextBlock FlowDirection="LeftToRight" Text="Cheats" FontSize="10" HorizontalAlignment="Center" />
+        </CheckBox>
+        <TextBlock x:Name="textSettings_Copy" Canvas.Left="735" Canvas.Top="12" FontWeight="Bold" FontSize="11" Foreground="#FF888FBF" FontFamily="Bahnschrift" HorizontalAlignment="Left" VerticalAlignment="Center"><Run Language="fi-fi" Text="Player"/></TextBlock>
+        <CheckBox x:Name="OrientationComplete" FlowDirection="RightToLeft" Canvas.Left="622" Canvas.Top="174" Foreground="#FF888FBF" FontFamily="Bahnschrift" HorizontalAlignment="Center" VerticalAlignment="Top" Width="145" TextBlock.FontSize="10" Height="11" ToolTip="Unlocks the Urban Training Grounds">
+            <TextBlock FlowDirection="LeftToRight" Text="Orientation completed" FontSize="10" Width="100" />
+        </CheckBox>
+        <CheckBox x:Name="Rumble" FlowDirection="RightToLeft" Canvas.Left="622" Canvas.Top="97" Foreground="#FF888FBF" FontFamily="Bahnschrift" Width="145" HorizontalAlignment="Center" VerticalAlignment="Top" TextBlock.FontSize="10" Height="11">
+            <TextBlock FlowDirection="LeftToRight" Text="Toggle Rumble" FontSize="10" Width="66" />
+        </CheckBox>
+        <CheckBox x:Name="Stereo" FlowDirection="RightToLeft" Canvas.Left="622" Canvas.Top="108" Foreground="#FF888FBF" FontFamily="Bahnschrift" Width="145" HorizontalAlignment="Center" VerticalAlignment="Top" TextBlock.FontSize="10" Height="11">
+            <TextBlock FlowDirection="LeftToRight" Text="Toggle Stereo" FontSize="10" Width="61" />
+        </CheckBox>
+        <TextBlock x:Name="textSettings_Copy1" Text="Other" Canvas.Left="739" Canvas.Top="160" FontWeight="Bold" FontSize="11" Foreground="#FF888FBF" FontFamily="Bahnschrift" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="UrbanFlag1" FlowDirection="RightToLeft" Canvas.Left="597" Canvas.Top="186" Foreground="#FF888FBF" FontFamily="Bahnschrift" Width="170" TextBlock.FontSize="10" Height="11" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBlock FlowDirection="LeftToRight" Text="Extra life from Urban Pursuit" FontSize="9" Width="120" Margin="-4,1,0,0" />
+        </CheckBox>
+        <Button x:Name="buttonReset" Content="Reset" Canvas.Left="734" Canvas.Top="220" Click="buttonReset_Click" Foreground="#FF888FBF" FontFamily="Bahnschrift" FontSize="10" Width="32" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Button x:Name="buttonHundo" Content="100%" Canvas.Left="703" Canvas.Top="220" Click="buttonHundo_Click" Foreground="#FF888FBF" FontFamily="Bahnschrift" FontSize="10" Width="28" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+        <TextBox x:Name="MusicVolume" Canvas.Left="741" TextWrapping="Wrap" Canvas.Top="120" Width="25" FontSize="10" TextChanged="MusicVolume_TextChanged" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textMusicVol" Text="Music Volume" Canvas.Left="677" Canvas.Top="122" FontSize="10" Foreground="#FF888FBF" FontFamily="Bahnschrift" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="SFXVolume" Canvas.Left="741" TextWrapping="Wrap" Canvas.Top="138" Width="25" FontSize="10" TextChanged="SFXVolume_TextChanged" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textSFXVol" Text="SFX Volume" Canvas.Left="685" Canvas.Top="140" FontSize="10" Foreground="#FF888FBF" FontFamily="Bahnschrift" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkToken1" Canvas.Left="333" Canvas.Top="45" Background="#FF81C5FF" Click="CityParkToken1_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkToken2" Canvas.Left="349" Canvas.Top="45" Background="#FF81C5FF" Click="CityParkToken2_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkToken3" Canvas.Left="365" Canvas.Top="45" Background="#FF81C5FF" Click="CityParkToken3_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkToken4" Canvas.Left="381" Canvas.Top="45" Background="#FF81C5FF" Click="CityParkToken4_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkToken5" Canvas.Left="397" Canvas.Top="45" Background="#FF81C5FF" Click="CityParkToken5_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkToken6" Canvas.Left="413" Canvas.Top="45" Background="#FF81C5FF" Click="CityParkToken6_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkToken7" Canvas.Left="429" Canvas.Top="45" Background="#FF81C5FF" Click="CityParkToken7_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkToken8" Canvas.Left="445" Canvas.Top="45" Background="#FF81C5FF" Click="CityParkToken8_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkToken9" Canvas.Left="461" Canvas.Top="45" Background="#FF81C5FF" Click="CityParkToken9_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkToken10" Canvas.Left="477" Canvas.Top="45" Background="#FF81C5FF" Click="CityParkToken10_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkNerve1" Canvas.Left="205" Canvas.Top="45" Background="#FFFBCA44" Click="CityParkNerve1_Click" ToolTip="Blue nerve on the sandbox" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkNerve2" Canvas.Left="221" Canvas.Top="45" Background="#FFFBCA44" Click="CityParkNerve2_Click" ToolTip="Green nerve on the jungle gym" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkNerve3" Canvas.Left="237" Canvas.Top="45" Background="#FFFBCA44" Click="CityParkNerve3_Click" ToolTip="Orange nerve hiding in a trash can" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkNerve4" Canvas.Left="253" Canvas.Top="45" Background="#FFFBCA44" Click="CityParkNerve4_Click" ToolTip="Yellow nerve under the tree" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkNerve5" Canvas.Left="269" Canvas.Top="45" Background="#FFFBCA44" Click="CityParkNerve5_Click" ToolTip="Red nerve that spawns after silver medal" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkNerve6" Canvas.Left="285" Canvas.Top="45" Background="#FFFBCA44" Click="CityParkNerve6_Click" ToolTip="Jumping red nerve at the other park" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkNerve7" Canvas.Left="301" Canvas.Top="45" Background="#FFFBCA44" Click="CityParkNerve7_Click" ToolTip="Green nerve at the other park" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkNerve8" Canvas.Left="317" Canvas.Top="45" Background="#FFFBCA44" Click="CityParkNerve8_Click" ToolTip="Red nerve that you slide with" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkBronze" Canvas.Left="157" Canvas.Top="45" Background="#FFFF5C5C" Click="CityParkBronze_Click" ToolTip="Bronze" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkSilver" Canvas.Left="173" Canvas.Top="45" Background="#FFFF5C5C" Click="CityParkSilver_Click" ToolTip="Silver" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkGold" Canvas.Left="189" Canvas.Top="45" Background="#FFFF5C5C" Click="CityParkGold_Click" ToolTip="Gold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Button x:Name="OrientationInfoButton" Content="?" Canvas.Left="74" Canvas.Top="32" Click="OrientationInfoButton_Click" Height="9" FontSize="7" Padding="1,-1.6,1,1" FontWeight="Bold"/>
+        <CheckBox x:Name="CityParkFlag1" Canvas.Left="493" Canvas.Top="45" Background="#FFE8E8E8" Click="CityParkFlag1_Click" ToolTip="Extra life from a trash can" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityParkFlag2" Canvas.Left="509" Canvas.Top="45" Background="#FFE8E8E8" Click="CityParkFlag2_Click" ToolTip="Extra life from a trash can" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="CityParkFlag3" Canvas.Left="525" Canvas.Top="45" Background="#FFE8E8E8" Click="CityParkFlag3_Click" ToolTip="Extra life from a trash can" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="CityParkFlag4" Canvas.Left="541" Canvas.Top="45" Background="#FFE8E8E8" Click="CityParkFlag4_Click" ToolTip="Extra life from a trash can" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="CityParkFlag5" Canvas.Left="557" Canvas.Top="45" Background="#FFE8E8E8" Click="CityParkFlag5_Click" ToolTip="Extra life from a trash can" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="CityParkFlag6" Canvas.Left="573" Canvas.Top="45" Background="#FFE8E8E8" Click="CityParkFlag6_Click" ToolTip="Extra life from a trash can" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="CityParkFlag7" Canvas.Left="589" Canvas.Top="45" Background="#FFE8E8E8" Click="CityParkFlag7_Click" ToolTip="Extra life from a trash can" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="CityParkFlag8" Canvas.Left="605" Canvas.Top="45" Background="#FFE8E8E8" Click="CityParkFlag8_Click" ToolTip="Button has been pressed that unlocks the tree path" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <CheckBox x:Name="CityCentreToken1" Canvas.Left="333" Canvas.Top="61" Background="#FF81C5FF" Click="CityCentreToken1_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreToken2" Canvas.Left="349" Canvas.Top="61" Background="#FF81C5FF" Click="CityCentreToken2_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreToken3" Canvas.Left="365" Canvas.Top="61" Background="#FF81C5FF" Click="CityCentreToken3_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreToken4" Canvas.Left="381" Canvas.Top="61" Background="#FF81C5FF" Click="CityCentreToken4_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreToken5" Canvas.Left="397" Canvas.Top="61" Background="#FF81C5FF" Click="CityCentreToken5_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreToken6" Canvas.Left="413" Canvas.Top="61" Background="#FF81C5FF" Click="CityCentreToken6_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreToken7" Canvas.Left="429" Canvas.Top="61" Background="#FF81C5FF" Click="CityCentreToken7_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreToken8" Canvas.Left="445" Canvas.Top="61" Background="#FF81C5FF" Click="CityCentreToken8_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreToken9" Canvas.Left="461" Canvas.Top="61" Background="#FF81C5FF" Click="CityCentreToken9_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreToken10" Canvas.Left="477" Canvas.Top="61" Background="#FF81C5FF" Click="CityCentreToken10_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreNerve1" Canvas.Left="205" Canvas.Top="61" Background="#FFFBCA44" Click="CityCentreNerve1_Click" ToolTip="Blue nerve in the sewer" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreNerve2" Canvas.Left="221" Canvas.Top="61" Background="#FFFBCA44" Click="CityCentreNerve2_Click" ToolTip="Blue nerve in front of the truck" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreNerve3" Canvas.Left="237" Canvas.Top="61" Background="#FFFBCA44" Click="CityCentreNerve3_Click" ToolTip="Green nerve at the park" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreNerve4" Canvas.Left="253" Canvas.Top="61" Background="#FFFBCA44" Click="CityCentreNerve4_Click" ToolTip="Red nerve after getting the silver medal" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreNerve5" Canvas.Left="269" Canvas.Top="61" Background="#FFFBCA44" Click="CityCentreNerve5_Click" ToolTip="Red nerve on a high platform (trampoline)" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreNerve6" Canvas.Left="285" Canvas.Top="61" Background="#FFFBCA44" Click="CityCentreNerve6_Click" ToolTip="Red nerve that runs away" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreNerve7" Canvas.Left="301" Canvas.Top="61" Background="#FFFBCA44" Click="CityCentreNerve7_Click" ToolTip="Orange nerve on top of a bookshelf (toy store)" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreNerve8" Canvas.Left="317" Canvas.Top="61" Background="#FFFBCA44" Click="CityCentreNerve8_Click" ToolTip="Yellow nerve (toy store)" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreBronze" Canvas.Left="157" Canvas.Top="61" Background="#FFFF5C5C" Click="CityCentreBronze_Click" ToolTip="Bronze" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreSilver" Canvas.Left="173" Canvas.Top="61" Background="#FFFF5C5C" Click="CityCentreSilver_Click" ToolTip="Silver" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreGold" Canvas.Left="189" Canvas.Top="61" Background="#FFFF5C5C" Click="CityCentreGold_Click" ToolTip="Gold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreFlag1" Canvas.Left="493" Canvas.Top="61" Background="#FFE8E8E8" Click="CityCentreFlag1_Click" ToolTip="Extra life" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CityCentreFlag2" Canvas.Left="509" Canvas.Top="61" Background="#FFE8E8E8" Click="CityCentreFlag2_Click" ToolTip="Extra life" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <CheckBox x:Name="DocksToken1" Canvas.Left="333" Canvas.Top="77" Background="#FF81C5FF" Click="DocksToken1_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksToken2" Canvas.Left="349" Canvas.Top="77" Background="#FF81C5FF" Click="DocksToken2_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksToken3" Canvas.Left="365" Canvas.Top="77" Background="#FF81C5FF" Click="DocksToken3_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksToken4" Canvas.Left="381" Canvas.Top="77" Background="#FF81C5FF" Click="DocksToken4_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksToken5" Canvas.Left="397" Canvas.Top="77" Background="#FF81C5FF" Click="DocksToken5_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksToken6" Canvas.Left="413" Canvas.Top="77" Background="#FF81C5FF" Click="DocksToken6_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksToken7" Canvas.Left="429" Canvas.Top="77" Background="#FF81C5FF" Click="DocksToken7_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksToken8" Canvas.Left="445" Canvas.Top="77" Background="#FF81C5FF" Click="DocksToken8_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksToken9" Canvas.Left="461" Canvas.Top="77" Background="#FF81C5FF" Click="DocksToken9_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksToken10" Canvas.Left="477" Canvas.Top="77" Background="#FF81C5FF" Click="DocksToken10_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksNerve1" Canvas.Left="205" Canvas.Top="77" Background="#FFFBCA44" Click="DocksNerve1_Click" ToolTip="Green nerve next to the lighthouse" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksNerve2" Canvas.Left="221" Canvas.Top="77" Background="#FFFBCA44" Click="DocksNerve2_Click" ToolTip="Green nerve on the pier" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksNerve3" Canvas.Left="237" Canvas.Top="77" Background="#FFFBCA44" Click="DocksNerve3_Click" ToolTip="Yellow nerve on top of the lighthouse" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksNerve4" Canvas.Left="253" Canvas.Top="77" Background="#FFFBCA44" Click="DocksNerve4_Click" ToolTip="Orange nerve on the ship" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksNerve5" Canvas.Left="269" Canvas.Top="77" Background="#FFFBCA44" Click="DocksNerve5_Click" ToolTip="Red nerve on top of the ship, spawns after the silver medal" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksNerve6" Canvas.Left="285" Canvas.Top="77" Background="#FFFBCA44" Click="DocksNerve6_Click" ToolTip="Red nerve on top of the ship" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksNerve7" Canvas.Left="301" Canvas.Top="77" Background="#FFFBCA44" Click="DocksNerve7_Click" ToolTip="Red nerve at the end of the ship (inside)" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksNerve8" Canvas.Left="317" Canvas.Top="77" Background="#FFFBCA44" Click="DocksNerve8_Click" ToolTip="Blue nerve inside a crate next to spawn" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksBronze" Canvas.Left="157" Canvas.Top="77" Background="#FFFF5C5C" Click="DocksBronze_Click" ToolTip="Bronze" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksSilver" Canvas.Left="173" Canvas.Top="77" Background="#FFFF5C5C" Click="DocksSilver_Click" ToolTip="Silver" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksGold" Canvas.Left="189" Canvas.Top="77" Background="#FFFF5C5C" Click="DocksGold_Click" ToolTip="Gold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksFlag1" Canvas.Left="493" Canvas.Top="77" Background="#FFE8E8E8" Click="DocksFlag1_Click" ToolTip="Extra life at the top of the ship" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksFlag2" Canvas.Left="509" Canvas.Top="77" Background="#FFE8E8E8" Click="DocksFlag2_Click" ToolTip="Extra life inside of the ship" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DocksFlag3" Canvas.Left="525" Canvas.Top="77" Background="#FFE8E8E8" Click="DocksFlag3_Click" ToolTip="Button inside the ship that moves the crane" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <CheckBox x:Name="MarketplaceToken1" Canvas.Left="333" Canvas.Top="93" Background="#FF81C5FF" Click="MarketplaceToken1_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceToken2" Canvas.Left="349" Canvas.Top="93" Background="#FF81C5FF" Click="MarketplaceToken2_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceToken3" Canvas.Left="365" Canvas.Top="93" Background="#FF81C5FF" Click="MarketplaceToken3_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceToken4" Canvas.Left="381" Canvas.Top="93" Background="#FF81C5FF" Click="MarketplaceToken4_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceToken5" Canvas.Left="397" Canvas.Top="93" Background="#FF81C5FF" Click="MarketplaceToken5_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceToken6" Canvas.Left="413" Canvas.Top="93" Background="#FF81C5FF" Click="MarketplaceToken6_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceToken7" Canvas.Left="429" Canvas.Top="93" Background="#FF81C5FF" Click="MarketplaceToken7_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceToken8" Canvas.Left="445" Canvas.Top="93" Background="#FF81C5FF" Click="MarketplaceToken8_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceToken9" Canvas.Left="461" Canvas.Top="93" Background="#FF81C5FF" Click="MarketplaceToken9_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceToken10" Canvas.Left="477" Canvas.Top="93" Background="#FF81C5FF" Click="MarketplaceToken10_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceNerve1" Canvas.Left="205" Canvas.Top="93" Background="#FFFBCA44" Click="MarketplaceNerve1_Click" ToolTip="Green nerve next to trampolines" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceNerve2" Canvas.Left="221" Canvas.Top="93" Background="#FFFBCA44" Click="MarketplaceNerve2_Click" ToolTip="Red nerve near spawn (trampoline)" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceNerve3" Canvas.Left="237" Canvas.Top="93" Background="#FFFBCA44" Click="MarketplaceNerve3_Click" ToolTip="Blue nerve next to a floating crate" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceNerve4" Canvas.Left="253" Canvas.Top="93" Background="#FFFBCA44" Click="MarketplaceNerve4_Click" ToolTip="Yellow nerve in the sewer" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceNerve5" Canvas.Left="269" Canvas.Top="93" Background="#FFFBCA44" Click="MarketplaceNerve5_Click" ToolTip="Yellow nerve circling a sewer" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceNerve6" Canvas.Left="285" Canvas.Top="93" Background="#FFFBCA44" Click="MarketplaceNerve6_Click" ToolTip="Orange nerve inside the cage" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceNerve7" Canvas.Left="301" Canvas.Top="93" Background="#FFFBCA44" Click="MarketplaceNerve7_Click" ToolTip="Red nerve at the top, doing backflips" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceNerve8" Canvas.Left="317" Canvas.Top="93" Background="#FFFBCA44" Click="MarketplaceNerve8_Click" ToolTip="Red nerve that spawns after the silver medal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceBronze" Canvas.Left="157" Canvas.Top="93" Background="#FFFF5C5C" Click="MarketplaceBronze_Click" ToolTip="Bronze" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceSilver" Canvas.Left="173" Canvas.Top="93" Background="#FFFF5C5C" Click="MarketplaceSilver_Click" ToolTip="Silver" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceGold" Canvas.Left="189" Canvas.Top="93" Background="#FFFF5C5C" Click="MarketplaceGold_Click" ToolTip="Gold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceFlag1" Canvas.Left="493" Canvas.Top="93" Background="#FFE8E8E8" Click="MarketplaceFlag1_Click" ToolTip="Extra life next to the green nerve" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceFlag2" Canvas.Left="509" Canvas.Top="93" Background="#FFE8E8E8" Click="MarketplaceFlag2_Click" ToolTip="Extra life at the top, next to red nerve" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceFlag3" Canvas.Left="525" Canvas.Top="93" Background="#FFE8E8E8" Click="MarketplaceFlag3_Click" ToolTip="Extra life inside a crate near spawn" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceFlag4" Canvas.Left="541" Canvas.Top="93" Background="#FFE8E8E8" Click="MarketplaceFlag4_Click" ToolTip="Extra life inside a crate" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="MarketplaceFlag5" Canvas.Left="557" Canvas.Top="93" Background="#FFE8E8E8" Click="MarketplaceFlag5_Click" ToolTip="Nerves running away at the start" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+        <CheckBox x:Name="SphinxToken1" Canvas.Left="333" Canvas.Top="109" Background="#FF81C5FF" Click="SphinxToken1_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SphinxToken2" Canvas.Left="349" Canvas.Top="109" Background="#FF81C5FF" Click="SphinxToken2_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SphinxToken3" Canvas.Left="365" Canvas.Top="109" Background="#FF81C5FF" Click="SphinxToken3_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SphinxToken4" Canvas.Left="381" Canvas.Top="109" Background="#FF81C5FF" Click="SphinxToken4_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SphinxToken5" Canvas.Left="397" Canvas.Top="109" Background="#FF81C5FF" Click="SphinxToken5_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SphinxToken6" Canvas.Left="413" Canvas.Top="109" Background="#FF81C5FF" Click="SphinxToken6_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SphinxToken7" Canvas.Left="429" Canvas.Top="109" Background="#FF81C5FF" Click="SphinxToken7_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SphinxToken8" Canvas.Left="445" Canvas.Top="109" Background="#FF81C5FF" Click="SphinxToken8_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SphinxToken9" Canvas.Left="461" Canvas.Top="109" Background="#FF81C5FF" Click="SphinxToken9_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SphinxToken10" Canvas.Left="477" Canvas.Top="109" Background="#FF81C5FF" Click="SphinxToken10_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SphinxNerve1" Canvas.Left="205" Canvas.Top="109" Background="#FFFBCA44" Click="SphinxNerve1_Click" ToolTip="Green nerve from the puzzle" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SphinxNerve2" Canvas.Left="221" Canvas.Top="109" Background="#FFFBCA44" Click="SphinxNerve2_Click" ToolTip="Orange nerve next to the hammer enemy" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SphinxNerve3" Canvas.Left="237" Canvas.Top="109" Background="#FFFBCA44" Click="SphinxNerve3_Click" ToolTip="Red nerve inside the temple" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SphinxNerve4" Canvas.Left="253" Canvas.Top="109" Background="#FFFBCA44" Click="SphinxNerve4_Click" ToolTip="Yellow nerve from the puzzle" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SphinxNerve5" Canvas.Left="269" Canvas.Top="109" Background="#FFFBCA44" Click="SphinxNerve5_Click" ToolTip="Blue nerve from the puzzle" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SphinxNerve6" Canvas.Left="285" Canvas.Top="109" Background="#FFFBCA44" Click="SphinxNerve6_Click" ToolTip="Red nerve inside the temple" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SphinxNerve7" Canvas.Left="301" Canvas.Top="109" Background="#FFFBCA44" Click="SphinxNerve7_Click" ToolTip="Red nerve after the silver medal" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SphinxNerve8" Canvas.Left="317" Canvas.Top="109" Background="#FFFBCA44" Click="SphinxNerve8_Click" ToolTip="Yellow nerve near the eye button" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SphinxBronze" Canvas.Left="157" Canvas.Top="109" Background="#FFFF5C5C" Click="SphinxBronze_Click" ToolTip="Bronze" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SphinxSilver" Canvas.Left="173" Canvas.Top="109" Background="#FFFF5C5C" Click="SphinxSilver_Click" ToolTip="Silver" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SphinxGold" Canvas.Left="189" Canvas.Top="109" Background="#FFFF5C5C" Click="SphinxGold_Click" ToolTip="Gold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <CheckBox x:Name="OasisToken1" Canvas.Left="333" Canvas.Top="125" Background="#FF81C5FF" Click="OasisToken1_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisToken2" Canvas.Left="349" Canvas.Top="125" Background="#FF81C5FF" Click="OasisToken2_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisToken3" Canvas.Left="365" Canvas.Top="125" Background="#FF81C5FF" Click="OasisToken3_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisToken4" Canvas.Left="381" Canvas.Top="125" Background="#FF81C5FF" Click="OasisToken4_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisToken5" Canvas.Left="397" Canvas.Top="125" Background="#FF81C5FF" Click="OasisToken5_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisToken6" Canvas.Left="413" Canvas.Top="125" Background="#FF81C5FF" Click="OasisToken6_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisToken7" Canvas.Left="429" Canvas.Top="125" Background="#FF81C5FF" Click="OasisToken7_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisToken8" Canvas.Left="445" Canvas.Top="125" Background="#FF81C5FF" Click="OasisToken8_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisToken9" Canvas.Left="461" Canvas.Top="125" Background="#FF81C5FF" Click="OasisToken9_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisToken10" Canvas.Left="477" Canvas.Top="125" Background="#FF81C5FF" Click="OasisToken10_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisNerve1" Canvas.Left="205" Canvas.Top="125" Background="#FFFBCA44" Click="OasisNerve1_Click" ToolTip="Orange nerve on top of the hill" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisNerve2" Canvas.Left="221" Canvas.Top="125" Background="#FFFBCA44" Click="OasisNerve2_Click" ToolTip="Red nerve after the silver medal" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisNerve3" Canvas.Left="237" Canvas.Top="125" Background="#FFFBCA44" Click="OasisNerve3_Click" ToolTip="Orange nerve on top of a tree" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisNerve4" Canvas.Left="253" Canvas.Top="125" Background="#FFFBCA44" Click="OasisNerve4_Click" ToolTip="Green nerve next to a sandcastle" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisNerve5" Canvas.Left="269" Canvas.Top="125" Background="#FFFBCA44" Click="OasisNerve5_Click" ToolTip="Blue nerve from the puzzle" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisNerve6" Canvas.Left="285" Canvas.Top="125" Background="#FFFBCA44" Click="OasisNerve6_Click" ToolTip="Yellow nerve from the puzzle" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisNerve7" Canvas.Left="301" Canvas.Top="125" Background="#FFFBCA44" Click="OasisNerve7_Click" ToolTip="Red nerve from the puzzle" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisNerve8" Canvas.Left="317" Canvas.Top="125" Background="#FFFBCA44" Click="OasisNerve8_Click" ToolTip="Blue nerve inside the cage" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisBronze" Canvas.Left="157" Canvas.Top="125" Background="#FFFF5C5C" Click="OasisBronze_Click" ToolTip="Bronze" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisSilver" Canvas.Left="173" Canvas.Top="125" Background="#FFFF5C5C" Click="OasisSilver_Click" ToolTip="Silver" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisGold" Canvas.Left="189" Canvas.Top="125" Background="#FFFF5C5C" Click="OasisGold_Click" ToolTip="Gold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisFlag1" Canvas.Left="493" Canvas.Top="125" Background="#FFE8E8E8" Click="OasisFlag1_Click" ToolTip="Extra life behind the waterfall" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisFlag2" Canvas.Left="509" Canvas.Top="125" Background="#FFE8E8E8" Click="OasisFlag2_Click" ToolTip="Extra life inside the cave on water" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisFlag3" Canvas.Left="525" Canvas.Top="125" Background="#FFE8E8E8" Click="OasisFlag3_Click" ToolTip="Extra life on top of a tree" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="OasisFlag4" Canvas.Left="541" Canvas.Top="125" Background="#FFE8E8E8" Click="OasisFlag4_Click" ToolTip="Extra life hovering on the pond" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <CheckBox x:Name="TombToken1" Canvas.Left="333" Canvas.Top="141" Background="#FF81C5FF" Click="TombToken1_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombToken2" Canvas.Left="349" Canvas.Top="141" Background="#FF81C5FF" Click="TombToken2_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombToken3" Canvas.Left="365" Canvas.Top="141" Background="#FF81C5FF" Click="TombToken3_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombToken4" Canvas.Left="381" Canvas.Top="141" Background="#FF81C5FF" Click="TombToken4_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombToken5" Canvas.Left="397" Canvas.Top="141" Background="#FF81C5FF" Click="TombToken5_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombToken6" Canvas.Left="413" Canvas.Top="141" Background="#FF81C5FF" Click="TombToken6_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombToken7" Canvas.Left="429" Canvas.Top="141" Background="#FF81C5FF" Click="TombToken7_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombToken8" Canvas.Left="445" Canvas.Top="141" Background="#FF81C5FF" Click="TombToken8_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombToken9" Canvas.Left="461" Canvas.Top="141" Background="#FF81C5FF" Click="TombToken9_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombToken10" Canvas.Left="477" Canvas.Top="141" Background="#FF81C5FF" Click="TombToken10_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombNerve1" Canvas.Left="205" Canvas.Top="141" Background="#FFFBCA44" Click="TombNerve1_Click" ToolTip="Red nerve on top of the well" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombNerve2" Canvas.Left="221" Canvas.Top="141" Background="#FFFBCA44" Click="TombNerve2_Click" ToolTip="Green nerve on top of the main building" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombNerve3" Canvas.Left="237" Canvas.Top="141" Background="#FFFBCA44" Click="TombNerve3_Click" ToolTip="Blue nerve near a rock" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombNerve4" Canvas.Left="253" Canvas.Top="141" Background="#FFFBCA44" Click="TombNerve4_Click" ToolTip="Orange nerve from the block puzzle" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombNerve5" Canvas.Left="269" Canvas.Top="141" Background="#FFFBCA44" Click="TombNerve5_Click" ToolTip="Orange nerve from the block puzzle" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombNerve6" Canvas.Left="285" Canvas.Top="141" Background="#FFFBCA44" Click="TombNerve6_Click" ToolTip="Red nerve after getting the silver medal" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombNerve7" Canvas.Left="301" Canvas.Top="141" Background="#FFFBCA44" Click="TombNerve7_Click" ToolTip="Red nerve playing bongos" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombNerve8" Canvas.Left="317" Canvas.Top="141" Background="#FFFBCA44" Click="TombNerve8_Click" ToolTip="Orange nerve from the last block puzzle" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombBronze" Canvas.Left="157" Canvas.Top="141" Background="#FFFF5C5C" Click="TombBronze_Click" ToolTip="Bronze" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombSilver" Canvas.Left="173" Canvas.Top="141" Background="#FFFF5C5C" Click="TombSilver_Click" ToolTip="Silver" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombGold" Canvas.Left="189" Canvas.Top="141" Background="#FFFF5C5C" Click="TombGold_Click" ToolTip="Gold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombFlag1" Canvas.Left="493" Canvas.Top="141" Background="#FFE8E8E8" Click="TombFlag1_Click" ToolTip="Extra life above the well" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombFlag2" Canvas.Left="509" Canvas.Top="141" Background="#FFE8E8E8" Click="TombFlag2_Click" ToolTip="Extra life near spawn" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombFlag3" Canvas.Left="525" Canvas.Top="141" Background="#FFE8E8E8" Click="TombFlag3_Click" ToolTip="Block that spawns an orange nerve" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombFlag4" Canvas.Left="541" Canvas.Top="141" Background="#FFE8E8E8" Click="TombFlag4_Click" ToolTip="Ankh block with a frowning face" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombFlag5" Canvas.Left="557" Canvas.Top="141" Background="#FFE8E8E8" Click="TombFlag5_Click" ToolTip="Ankh block with a happy face" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombFlag6" Canvas.Left="573" Canvas.Top="141" Background="#FFE8E8E8" Click="TombFlag6_Click" ToolTip="Block with a star shape" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombFlag7" Canvas.Left="589" Canvas.Top="141" Background="#FFE8E8E8" Click="TombFlag7_Click" ToolTip="Block with a moon shape and a dot" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TombFlag8" Canvas.Left="605" Canvas.Top="141" Background="#FFE8E8E8" Click="TombFlag8_Click" ToolTip="Block with a moon shape" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <CheckBox x:Name="PyramidToken1" Canvas.Left="333" Canvas.Top="157" Background="#FF81C5FF" Click="PyramidToken1_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidToken2" Canvas.Left="349" Canvas.Top="157" Background="#FF81C5FF" Click="PyramidToken2_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidToken3" Canvas.Left="365" Canvas.Top="157" Background="#FF81C5FF" Click="PyramidToken3_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidToken4" Canvas.Left="381" Canvas.Top="157" Background="#FF81C5FF" Click="PyramidToken4_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidToken5" Canvas.Left="397" Canvas.Top="157" Background="#FF81C5FF" Click="PyramidToken5_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidToken6" Canvas.Left="413" Canvas.Top="157" Background="#FF81C5FF" Click="PyramidToken6_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidToken7" Canvas.Left="429" Canvas.Top="157" Background="#FF81C5FF" Click="PyramidToken7_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidToken8" Canvas.Left="445" Canvas.Top="157" Background="#FF81C5FF" Click="PyramidToken8_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidToken9" Canvas.Left="461" Canvas.Top="157" Background="#FF81C5FF" Click="PyramidToken9_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidToken10" Canvas.Left="477" Canvas.Top="157" Background="#FF81C5FF" Click="PyramidToken10_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidNerve1" Canvas.Left="205" Canvas.Top="157" Background="#FFFBCA44" Click="PyramidNerve1_Click" ToolTip="Yellow nerve on top of a tree" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidNerve2" Canvas.Left="221" Canvas.Top="157" Background="#FFFBCA44" Click="PyramidNerve2_Click" ToolTip="Red nerve after the silver medal" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidNerve3" Canvas.Left="237" Canvas.Top="157" Background="#FFFBCA44" Click="PyramidNerve3_Click" ToolTip="Green nerve (eye pyramid)" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidNerve4" Canvas.Left="253" Canvas.Top="157" Background="#FFFBCA44" Click="PyramidNerve4_Click" ToolTip="Blue nerve (eye pyramid)" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidNerve5" Canvas.Left="269" Canvas.Top="157" Background="#FFFBCA44" Click="PyramidNerve5_Click" ToolTip="Red nerve (snake pyramid)" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidNerve6" Canvas.Left="285" Canvas.Top="157" Background="#FFFBCA44" Click="PyramidNerve6_Click" ToolTip="Blue nerve (snake pyramid)" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidNerve7" Canvas.Left="301" Canvas.Top="157" Background="#FFFBCA44" Click="PyramidNerve7_Click" ToolTip="Orange nerve (boulder pyramid)" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidNerve8" Canvas.Left="317" Canvas.Top="157" Background="#FFFBCA44" Click="PyramidNerve8_Click" ToolTip="Red nerve (steam pyramid)" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidBronze" Canvas.Left="157" Canvas.Top="157" Background="#FFFF5C5C" Click="PyramidBronze_Click" ToolTip="Bronze" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidSilver" Canvas.Left="173" Canvas.Top="157" Background="#FFFF5C5C" Click="PyramidSilver_Click" ToolTip="Silver" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidGold" Canvas.Left="189" Canvas.Top="157" Background="#FFFF5C5C" Click="PyramidGold_Click" ToolTip="Gold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidFlag1" Canvas.Left="493" Canvas.Top="157" Background="#FFE8E8E8" Click="PyramidFlag1_Click" ToolTip="Extra life on the pyramid (slingshot)" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidFlag2" Canvas.Left="509" Canvas.Top="157" Background="#FFE8E8E8" Click="PyramidFlag2_Click" ToolTip="Extra life on the pyramid (slingshot)" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidFlag3" Canvas.Left="525" Canvas.Top="157" Background="#FFE8E8E8" Click="PyramidFlag3_Click" ToolTip="Extra life on the pyramid (slingshot)" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="PyramidFlag4" Canvas.Left="541" Canvas.Top="157" Background="#FFE8E8E8" Click="PyramidFlag4_Click" ToolTip="Extra life on the pyramid (slingshot)" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <CheckBox x:Name="SugarShackToken1" Canvas.Left="333" Canvas.Top="173" Background="#FF81C5FF" Click="SugarShackToken1_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackToken2" Canvas.Left="349" Canvas.Top="173" Background="#FF81C5FF" Click="SugarShackToken2_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackToken3" Canvas.Left="365" Canvas.Top="173" Background="#FF81C5FF" Click="SugarShackToken3_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackToken4" Canvas.Left="381" Canvas.Top="173" Background="#FF81C5FF" Click="SugarShackToken4_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackToken5" Canvas.Left="397" Canvas.Top="173" Background="#FF81C5FF" Click="SugarShackToken5_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackToken6" Canvas.Left="413" Canvas.Top="173" Background="#FF81C5FF" Click="SugarShackToken6_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackToken7" Canvas.Left="429" Canvas.Top="173" Background="#FF81C5FF" Click="SugarShackToken7_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackToken8" Canvas.Left="445" Canvas.Top="173" Background="#FF81C5FF" Click="SugarShackToken8_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackToken9" Canvas.Left="461" Canvas.Top="173" Background="#FF81C5FF" Click="SugarShackToken9_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackToken10" Canvas.Left="477" Canvas.Top="173" Background="#FF81C5FF" Click="SugarShackToken10_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackNerve1" Canvas.Left="205" Canvas.Top="173" Background="#FFFBCA44" Click="SugarShackNerve1_Click" ToolTip="Green nerve next to trampolines" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackNerve2" Canvas.Left="221" Canvas.Top="173" Background="#FFFBCA44" Click="SugarShackNerve2_Click" ToolTip="Red nerve near spawn (trampoline)" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackNerve3" Canvas.Left="237" Canvas.Top="173" Background="#FFFBCA44" Click="SugarShackNerve3_Click" ToolTip="Blue nerve next to a floating crate" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackNerve4" Canvas.Left="253" Canvas.Top="173" Background="#FFFBCA44" Click="SugarShackNerve4_Click" ToolTip="Yellow nerve in the sewer" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackNerve5" Canvas.Left="269" Canvas.Top="173" Background="#FFFBCA44" Click="SugarShackNerve5_Click" ToolTip="Yellow nerve circling a sewer" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackNerve6" Canvas.Left="285" Canvas.Top="173" Background="#FFFBCA44" Click="SugarShackNerve6_Click" ToolTip="Orange nerve inside the cage" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackNerve7" Canvas.Left="301" Canvas.Top="173" Background="#FFFBCA44" Click="SugarShackNerve7_Click" ToolTip="Red nerve at the top, doing backflips" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackNerve8" Canvas.Left="317" Canvas.Top="173" Background="#FFFBCA44" Click="SugarShackNerve8_Click" ToolTip="Red nerve that spawns after the silver medal" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackBronze" Canvas.Left="157" Canvas.Top="173" Background="#FFFF5C5C" Click="SugarShackBronze_Click" ToolTip="Bronze" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackSilver" Canvas.Left="173" Canvas.Top="173" Background="#FFFF5C5C" Click="SugarShackSilver_Click" ToolTip="Silver" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackGold" Canvas.Left="189" Canvas.Top="173" Background="#FFFF5C5C" Click="SugarShackGold_Click" ToolTip="Gold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackFlag1" Canvas.Left="493" Canvas.Top="173" Background="#FFE8E8E8" Click="SugarShackFlag1_Click" ToolTip="Extra life above no swimming sign" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackFlag2" Canvas.Left="509" Canvas.Top="173" Background="#FFE8E8E8" Click="SugarShackFlag2_Click" ToolTip="Log placed" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackFlag3" Canvas.Left="525" Canvas.Top="173" Background="#FFE8E8E8" Click="SugarShackFlag3_Click" ToolTip="Log placed" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackFlag4" Canvas.Left="541" Canvas.Top="173" Background="#FFE8E8E8" Click="SugarShackFlag4_Click" ToolTip="Log placed" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackFlag5" Canvas.Left="557" Canvas.Top="173" Background="#FFE8E8E8" Click="SugarShackFlag5_Click" ToolTip="Log placed" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SugarShackFlag6" Canvas.Left="557" Canvas.Top="173" Background="#FFE8E8E8" Click="SugarShackFlag6_Click" ToolTip="Open shack from inside" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <CheckBox x:Name="SkiliftToken1" Canvas.Left="333" Canvas.Top="189" Background="#FF81C5FF" Click="SkiliftToken1_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftToken2" Canvas.Left="349" Canvas.Top="189" Background="#FF81C5FF" Click="SkiliftToken2_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftToken3" Canvas.Left="365" Canvas.Top="189" Background="#FF81C5FF" Click="SkiliftToken3_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftToken4" Canvas.Left="381" Canvas.Top="189" Background="#FF81C5FF" Click="SkiliftToken4_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftToken5" Canvas.Left="397" Canvas.Top="189" Background="#FF81C5FF" Click="SkiliftToken5_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftToken6" Canvas.Left="413" Canvas.Top="189" Background="#FF81C5FF" Click="SkiliftToken6_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftToken7" Canvas.Left="429" Canvas.Top="189" Background="#FF81C5FF" Click="SkiliftToken7_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftToken8" Canvas.Left="445" Canvas.Top="189" Background="#FF81C5FF" Click="SkiliftToken8_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftToken9" Canvas.Left="461" Canvas.Top="189" Background="#FF81C5FF" Click="SkiliftToken9_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftToken10" Canvas.Left="477" Canvas.Top="189" Background="#FF81C5FF" Click="SkiliftToken10_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftNerve1" Canvas.Left="205" Canvas.Top="189" Background="#FFFBCA44" Click="SkiliftNerve1_Click" ToolTip="Orange nerve on top of the hill" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftNerve2" Canvas.Left="221" Canvas.Top="189" Background="#FFFBCA44" Click="SkiliftNerve2_Click" ToolTip="Red nerve after the silver medal" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftNerve3" Canvas.Left="237" Canvas.Top="189" Background="#FFFBCA44" Click="SkiliftNerve3_Click" ToolTip="Orange nerve on top of a tree" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftNerve4" Canvas.Left="253" Canvas.Top="189" Background="#FFFBCA44" Click="SkiliftNerve4_Click" ToolTip="Green nerve next to a sandcastle" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftNerve5" Canvas.Left="269" Canvas.Top="189" Background="#FFFBCA44" Click="SkiliftNerve5_Click" ToolTip="Blue nerve from the puzzle" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftNerve6" Canvas.Left="285" Canvas.Top="189" Background="#FFFBCA44" Click="SkiliftNerve6_Click" ToolTip="Yellow nerve from the puzzle" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftNerve7" Canvas.Left="301" Canvas.Top="189" Background="#FFFBCA44" Click="SkiliftNerve7_Click" ToolTip="Red nerve from the puzzle" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftNerve8" Canvas.Left="317" Canvas.Top="189" Background="#FFFBCA44" Click="SkiliftNerve8_Click" ToolTip="Blue nerve inside the cage" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftBronze" Canvas.Left="157" Canvas.Top="189" Background="#FFFF5C5C" Click="SkiliftBronze_Click" ToolTip="Bronze" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftSilver" Canvas.Left="173" Canvas.Top="189" Background="#FFFF5C5C" Click="SkiliftSilver_Click" ToolTip="Silver" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftGold" Canvas.Left="189" Canvas.Top="189" Background="#FFFF5C5C" Click="SkiliftGold_Click" ToolTip="Gold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftFlag1" Canvas.Left="493" Canvas.Top="189" Background="#FFE8E8E8" Click="SkiliftFlag1_Click" ToolTip="Extra life behind the waterfall" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftFlag2" Canvas.Left="509" Canvas.Top="189" Background="#FFE8E8E8" Click="SkiliftFlag2_Click" ToolTip="Extra life inside the cave in water" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftFlag3" Canvas.Left="525" Canvas.Top="189" Background="#FFE8E8E8" Click="SkiliftFlag3_Click" ToolTip="Extra life on top of a tree" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="SkiliftFlag4" Canvas.Left="541" Canvas.Top="189" Background="#FFE8E8E8" Click="SkiliftFlag4_Click" ToolTip="Extra life hovering on the pond" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <CheckBox x:Name="IcebergToken1" Canvas.Left="333" Canvas.Top="205" Background="#FF81C5FF" Click="IcebergToken1_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergToken2" Canvas.Left="349" Canvas.Top="205" Background="#FF81C5FF" Click="IcebergToken2_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergToken3" Canvas.Left="365" Canvas.Top="205" Background="#FF81C5FF" Click="IcebergToken3_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergToken4" Canvas.Left="381" Canvas.Top="205" Background="#FF81C5FF" Click="IcebergToken4_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergToken5" Canvas.Left="397" Canvas.Top="205" Background="#FF81C5FF" Click="IcebergToken5_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergToken6" Canvas.Left="413" Canvas.Top="205" Background="#FF81C5FF" Click="IcebergToken6_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergToken7" Canvas.Left="429" Canvas.Top="205" Background="#FF81C5FF" Click="IcebergToken7_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergToken8" Canvas.Left="445" Canvas.Top="205" Background="#FF81C5FF" Click="IcebergToken8_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergToken9" Canvas.Left="461" Canvas.Top="205" Background="#FF81C5FF" Click="IcebergToken9_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergToken10" Canvas.Left="477" Canvas.Top="205" Background="#FF81C5FF" Click="IcebergToken10_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergNerve1" Canvas.Left="205" Canvas.Top="205" Background="#FFFBCA44" Click="IcebergNerve1_Click" ToolTip="Yellow nerve next to a snowman" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergNerve2" Canvas.Left="221" Canvas.Top="205" Background="#FFFBCA44" Click="IcebergNerve2_Click" ToolTip="Yellow nerve ice skating" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergNerve3" Canvas.Left="237" Canvas.Top="205" Background="#FFFBCA44" Click="IcebergNerve3_Click" ToolTip="Orange nerve on a small water platform" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergNerve4" Canvas.Left="253" Canvas.Top="205" Background="#FFFBCA44" Click="IcebergNerve4_Click" ToolTip="Orange nerve next to the hill" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergNerve5" Canvas.Left="269" Canvas.Top="205" Background="#FFFBCA44" Click="IcebergNerve5_Click" ToolTip="Red nerve after the silver medal" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergNerve6" Canvas.Left="285" Canvas.Top="205" Background="#FFFBCA44" Click="IcebergNerve6_Click" ToolTip="Green nerve trying to climb a hill" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergNerve7" Canvas.Left="301" Canvas.Top="205" Background="#FFFBCA44" Click="IcebergNerve7_Click" ToolTip="Red nerve inside the castle" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergNerve8" Canvas.Left="317" Canvas.Top="205" Background="#FFFBCA44" Click="IcebergNerve8_Click" ToolTip="Red nerve in the igloo" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergBronze" Canvas.Left="157" Canvas.Top="205" Background="#FFFF5C5C" Click="IcebergBronze_Click" ToolTip="Bronze" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergSilver" Canvas.Left="173" Canvas.Top="205" Background="#FFFF5C5C" Click="IcebergSilver_Click" ToolTip="Silver" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergGold" Canvas.Left="189" Canvas.Top="205" Background="#FFFF5C5C" Click="IcebergGold_Click" ToolTip="Gold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="IcebergFlag1" Canvas.Left="493" Canvas.Top="205" Background="#FFE8E8E8" Click="IcebergFlag1_Click" ToolTip="Extra life before the slide" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <CheckBox x:Name="HotspringsToken1" Canvas.Left="333" Canvas.Top="221" Background="#FF81C5FF" Click="HotspringsToken1_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsToken2" Canvas.Left="349" Canvas.Top="221" Background="#FF81C5FF" Click="HotspringsToken2_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsToken3" Canvas.Left="365" Canvas.Top="221" Background="#FF81C5FF" Click="HotspringsToken3_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsToken4" Canvas.Left="381" Canvas.Top="221" Background="#FF81C5FF" Click="HotspringsToken4_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsToken5" Canvas.Left="397" Canvas.Top="221" Background="#FF81C5FF" Click="HotspringsToken5_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsToken6" Canvas.Left="413" Canvas.Top="221" Background="#FF81C5FF" Click="HotspringsToken6_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsToken7" Canvas.Left="429" Canvas.Top="221" Background="#FF81C5FF" Click="HotspringsToken7_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsToken8" Canvas.Left="445" Canvas.Top="221" Background="#FF81C5FF" Click="HotspringsToken8_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsToken9" Canvas.Left="461" Canvas.Top="221" Background="#FF81C5FF" Click="HotspringsToken9_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsToken10" Canvas.Left="477" Canvas.Top="221" Background="#FF81C5FF" Click="HotspringsToken10_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsNerve1" Canvas.Left="205" Canvas.Top="221" Background="#FFFBCA44" Click="HotspringsNerve1_Click" ToolTip="Orange nerve building a snowman at spawn" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsNerve2" Canvas.Left="221" Canvas.Top="221" Background="#FFFBCA44" Click="HotspringsNerve2_Click" ToolTip="Yellow nerve in a puddle of water and ooze" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsNerve3" Canvas.Left="237" Canvas.Top="221" Background="#FFFBCA44" Click="HotspringsNerve3_Click" ToolTip="Dancing red nerve next to a long geiser" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsNerve4" Canvas.Left="253" Canvas.Top="221" Background="#FFFBCA44" Click="HotspringsNerve4_Click" ToolTip="Red nerve at the top building a sculpture" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsNerve5" Canvas.Left="269" Canvas.Top="221" Background="#FFFBCA44" Click="HotspringsNerve5_Click" ToolTip="Red nerve that spawns after the silver medal" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsNerve6" Canvas.Left="285" Canvas.Top="221" Background="#FFFBCA44" Click="HotspringsNerve6_Click" ToolTip="Yellow nerve surrounded by geisers" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsNerve7" Canvas.Left="301" Canvas.Top="221" Background="#FFFBCA44" Click="HotspringsNerve7_Click" ToolTip="Green nerve after hall of falling ice" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsNerve8" Canvas.Left="317" Canvas.Top="221" Background="#FFFBCA44" Click="HotspringsNerve8_Click" ToolTip="Blue nerve building a sculpture" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsBronze" Canvas.Left="157" Canvas.Top="221" Background="#FFFF5C5C" Click="HotspringsBronze_Click" ToolTip="Bronze" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsSilver" Canvas.Left="173" Canvas.Top="221" Background="#FFFF5C5C" Click="HotspringsSilver_Click" ToolTip="Silver" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsGold" Canvas.Left="189" Canvas.Top="221" Background="#FFFF5C5C" Click="HotspringsGold_Click" ToolTip="Gold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsFlag1" Canvas.Left="493" Canvas.Top="221" Background="#FFE8E8E8" Click="HotspringsFlag1_Click" ToolTip="Extra life at the top (slingshot)" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsFlag2" Canvas.Left="509" Canvas.Top="221" Background="#FFE8E8E8" Click="HotspringsFlag2_Click" ToolTip="Extra life at the top (slingshot)" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsFlag3" Canvas.Left="525" Canvas.Top="221" Background="#FFE8E8E8" Click="HotspringsFlag3_Click" ToolTip="Extra life at the top (slingshot)" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="HotspringsFlag4" Canvas.Left="541" Canvas.Top="221" Background="#FFE8E8E8" Click="HotspringsFlag4_Click" ToolTip="Extra life on a ravine" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="ArcticFlag1" FlowDirection="RightToLeft" Canvas.Left="597" Canvas.Top="197" Foreground="#FF888FBF" FontFamily="Bahnschrift" Width="170" TextBlock.FontSize="10" Height="11" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBlock FlowDirection="LeftToRight" Text="Extra life from Arctic Pursuit" FontSize="9" Width="120" Margin="-4,1,0,0" />
+        </CheckBox>
+    </Canvas>
+</Window>
