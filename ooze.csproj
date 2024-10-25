@@ -12,12 +12,15 @@
     <None Remove="background.jpg" />
     <None Remove="bahnschrift.ttf" />
     <None Remove="ooze_icon.ico" />
+    <None Remove="resources\background.jpg" />
+    <None Remove="resources\bahnschrift.ttf" />
+    <None Remove="resources\ooze_icon.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="background.jpg" />
-    <Resource Include="bahnschrift.ttf" />
-    <Resource Include="ooze_icon.ico" />
+    <Resource Include="resources\background.jpg" />
+    <Resource Include="resources\bahnschrift.ttf" />
+    <Resource Include="resources\ooze_icon.png" />
   </ItemGroup>
 
 </Project>
